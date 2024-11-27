@@ -11,8 +11,7 @@ import (
 	"github.com/SadovovAlex/botrecept/internal/database"
 	"github.com/SadovovAlex/botrecept/internal/modules/menu"
 	"github.com/SadovovAlex/botrecept/internal/modules/misc"
-
-	//"github.com/SadovovAlex/botrecept/internal/modules/recept"
+	"github.com/SadovovAlex/botrecept/internal/modules/recept"
 	"github.com/SadovovAlex/botrecept/internal/modules/stickers"
 	"github.com/SadovovAlex/botrecept/internal/utils/helpers"
 
@@ -31,7 +30,7 @@ var (
 		"misc":     misc.Load,
 		"stickers": stickers.Load,
 		//	"sudoers":  sudoers.Load,
-		//"recept": recept.Load,
+		"recept": recept.Load,
 	}
 )
 
