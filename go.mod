@@ -8,19 +8,19 @@ require (
 	github.com/joho/godotenv v1.5.1
 	github.com/kkdai/youtube/v2 v2.10.1
 	github.com/lus/fluent.go v0.0.0-20240613180830-a11a6bbd90a9
-	github.com/mattn/go-sqlite3 v1.14.22
-	github.com/mymmrac/telego v0.31.0
+	github.com/mattn/go-sqlite3 v1.14.24
+	github.com/mymmrac/telego v0.31.4
 	github.com/redis/go-redis/v9 v9.6.1
-	github.com/valyala/fasthttp v1.55.0
+	github.com/valyala/fasthttp v1.57.0
 )
 
 require github.com/grafov/m3u8 v0.12.0
 
 require (
-	github.com/andybalholm/brotli v1.1.0 // indirect
+	github.com/andybalholm/brotli v1.1.1 // indirect
 	github.com/bitly/go-simplejson v0.5.1 // indirect
-	github.com/bytedance/sonic v1.11.9 // indirect
-	github.com/bytedance/sonic/loader v0.1.1 // indirect
+	github.com/bytedance/sonic v1.12.3 // indirect
+	github.com/bytedance/sonic/loader v0.2.0 // indirect
 	github.com/cespare/xxhash/v2 v2.3.0 // indirect
 	github.com/cloudwego/base64x v0.1.4 // indirect
 	github.com/cloudwego/iasm v0.2.0 // indirect
@@ -30,7 +30,7 @@ require (
 	github.com/go-sourcemap/sourcemap v2.1.4+incompatible // indirect
 	github.com/google/pprof v0.0.0-20240722153945-304e4f0156b8 // indirect
 	github.com/grbit/go-json v0.11.0 // indirect
-	github.com/klauspost/compress v1.17.9 // indirect
+	github.com/klauspost/compress v1.17.11 // indirect
 	github.com/klauspost/cpuid/v2 v2.2.8 // indirect
 	github.com/savsgio/gotils v0.0.0-20240704082632-aef3928b8a38 // indirect
 	github.com/twitchyliquid64/golang-asm v0.15.1 // indirect
@@ -38,7 +38,7 @@ require (
 	github.com/valyala/fastjson v1.6.4 // indirect
 	golang.org/x/arch v0.8.0 // indirect
 	golang.org/x/image v0.19.0 // indirect
-	golang.org/x/net v0.26.0 // indirect
-	golang.org/x/sys v0.22.0 // indirect
-	golang.org/x/text v0.17.0
+	golang.org/x/net v0.30.0 // indirect
+	golang.org/x/sys v0.26.0 // indirect
+	golang.org/x/text v0.19.0
 )
