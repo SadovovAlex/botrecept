@@ -6,8 +6,6 @@ import (
 	"github.com/mymmrac/telego/telegoutil"
 )
 
-var announceMessageText string
-
 func getrecept(bot *telego.Bot, update telego.Update) {
 
 	message := update.Message
