@@ -25,5 +25,6 @@ go.work.sum
 .env
 
 # run \ distr
- run/
-distr/
+run/*
+distr/*
+
