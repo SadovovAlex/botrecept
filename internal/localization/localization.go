@@ -25,7 +25,7 @@ var (
 
 func LoadLanguages() error {
 	database.AvailableLocales = nil
-	dir := "internal/localization/locales"
+	dir := "./locales"
 	var wg sync.WaitGroup
 
 	err := filepath.Walk(dir, func(path string, info os.FileInfo, err error) error {

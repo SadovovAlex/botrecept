@@ -257,11 +257,11 @@ func callbackRecept(bot *telego.Bot, update telego.Update) {
 	i18n := localization.Get(update)
 
 	bot.EditMessageText(&telego.EditMessageTextParams{
-		ChatID:    telegoutil.ID(update.CallbackQuery.Message.GetChat().ID),
-		MessageID: update.CallbackQuery.Message.GetMessageID(),
-		Text:      i18n("recepthelp"),
-		ParseMode: "HTML",
-		//ReplyMarkup: telegoutil.InlineKeyboard(helpers.GetHelpKeyboard(i18n)...),
+		ChatID:      telegoutil.ID(update.CallbackQuery.Message.GetChat().ID),
+		MessageID:   update.CallbackQuery.Message.GetMessageID(),
+		Text:        i18n("recepthelp"),
+		ParseMode:   "HTML",
+		ReplyMarkup: telegoutil.InlineKeyboard(helpers.GetHelpKeyboard(i18n)...),
 	})
 }
 

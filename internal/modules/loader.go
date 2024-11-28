@@ -6,9 +6,8 @@ import (
 	"strings"
 	"sync"
 
-	//"github.com/SadovovAlex/botrecept/internal/database"
-
 	"github.com/SadovovAlex/botrecept/internal/database"
+	"github.com/SadovovAlex/botrecept/internal/modules/config"
 	"github.com/SadovovAlex/botrecept/internal/modules/menu"
 	"github.com/SadovovAlex/botrecept/internal/modules/misc"
 	"github.com/SadovovAlex/botrecept/internal/modules/recept"
@@ -23,7 +22,7 @@ var (
 	packageLoadersMutex sync.Mutex
 	packageLoaders      = map[string]func(*telegohandler.BotHandler, *telego.Bot){
 		//  "afk":    afk.Load,
-		// "config": config.Load,
+		"config": config.Load,
 		//	"lastfm":   lastfm.Load,
 		//	"medias":   medias.Load,
 		"menu":     menu.Load,
