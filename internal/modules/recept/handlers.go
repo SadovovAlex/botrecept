@@ -8,6 +8,7 @@ import (
 	"strings"
 	"time"
 
+	"github.com/SadovovAlex/botrecept/internal/utils/helpers"
 	"github.com/mymmrac/telego"
 	"github.com/mymmrac/telego/telegohandler"
 	"github.com/mymmrac/telego/telegoutil"
@@ -65,6 +66,7 @@ func loadRecipes(filename string) ([]Recipe, error) {
 }
 
 func Load(bh *telegohandler.BotHandler, bot *telego.Bot) {
+	helpers.Store("recept")
 	bh.Handle(getrecept, telegohandler.Or(
 		telegohandler.CommandEqual("recept"),
 		telegohandler.CallbackDataPrefix("recept"),

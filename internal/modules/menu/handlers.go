@@ -15,12 +15,12 @@ import (
 
 func createStartKeyboard(i18n func(string, ...map[string]interface{}) string) *telego.InlineKeyboardMarkup {
 	return telegoutil.InlineKeyboard(
-		telegoutil.InlineKeyboardRow(
+		/*telegoutil.InlineKeyboardRow(
 			telego.InlineKeyboardButton{
-				Text:         i18n("recept-button"),
-				CallbackData: "helpMenu",
+				Text:         i18n("func-button"),
+				CallbackData: "func",
 			},
-		),
+		),*/
 		telegoutil.InlineKeyboardRow(
 			telego.InlineKeyboardButton{
 				Text:         i18n("about-button"),
@@ -41,6 +41,7 @@ func createStartKeyboard(i18n func(string, ...map[string]interface{}) string) *t
 }
 
 func handleStart(bot *telego.Bot, message telego.Message) {
+	fmt.Println("handleStart")
 	botUser, err := bot.GetMe()
 	if err != nil {
 		log.Fatal(err)
@@ -89,6 +90,7 @@ func handleStart(bot *telego.Bot, message telego.Message) {
 }
 
 func callbackStart(bot *telego.Bot, update telego.Update) {
+	fmt.Println("callbackStart")
 	botUser, err := bot.GetMe()
 	if err != nil {
 		log.Fatal(err)
@@ -112,6 +114,7 @@ func callbackStart(bot *telego.Bot, update telego.Update) {
 }
 
 func handlePrivacy(bot *telego.Bot, message telego.Message) {
+	fmt.Println("handlePrivacy")
 	botUser, err := bot.GetMe()
 	if err != nil {
 		log.Fatal(err)
@@ -155,6 +158,7 @@ func handlePrivacy(bot *telego.Bot, message telego.Message) {
 }
 
 func callbackPrivacy(bot *telego.Bot, update telego.Update) {
+	fmt.Println("callbackPrivacy")
 	i18n := localization.Get(update)
 	bot.EditMessageText(&telego.EditMessageTextParams{
 		ChatID:    telegoutil.ID(update.CallbackQuery.Message.GetChat().ID),
@@ -182,6 +186,7 @@ func callbackPrivacy(bot *telego.Bot, update telego.Update) {
 }
 
 func callbackAboutYourData(bot *telego.Bot, update telego.Update) {
+	fmt.Println("callbackAboutYourData")
 	i18n := localization.Get(update)
 
 	bot.EditMessageText(&telego.EditMessageTextParams{
@@ -204,7 +209,9 @@ func callbackAboutYourData(bot *telego.Bot, update telego.Update) {
 }
 
 func callbackAboutMenu(bot *telego.Bot, update telego.Update) {
+	fmt.Println("callbackAboutMenu")
 	i18n := localization.Get(update)
+	fmt.Println(i18n("about"))
 
 	bot.EditMessageText(&telego.EditMessageTextParams{
 		ChatID:    telegoutil.ID(update.CallbackQuery.Message.GetChat().ID),
@@ -218,11 +225,11 @@ func callbackAboutMenu(bot *telego.Bot, update telego.Update) {
 			telegoutil.InlineKeyboardRow(
 				telego.InlineKeyboardButton{
 					Text: i18n("donation-button"),
-					URL:  "https://zzzzzz",
+					URL:  "https://www.ru",
 				},
 				telego.InlineKeyboardButton{
 					Text: i18n("news-channel-button"),
-					URL:  "https://zzzzzzz",
+					URL:  "https://www.ru",
 				},
 			),
 			telegoutil.InlineKeyboardRow(
@@ -242,6 +249,7 @@ func callbackAboutMenu(bot *telego.Bot, update telego.Update) {
 }
 
 func callbackHelpMenu(bot *telego.Bot, update telego.Update) {
+	fmt.Println("callbackHelpMenu")
 	i18n := localization.Get(update)
 
 	bot.EditMessageText(&telego.EditMessageTextParams{
@@ -253,19 +261,23 @@ func callbackHelpMenu(bot *telego.Bot, update telego.Update) {
 	})
 }
 
-func callbackRecept(bot *telego.Bot, update telego.Update) {
+/*
+func callbackFunc(bot *telego.Bot, update telego.Update) {
+	fmt.Println("callbackFunc")
 	i18n := localization.Get(update)
 
 	bot.EditMessageText(&telego.EditMessageTextParams{
 		ChatID:      telegoutil.ID(update.CallbackQuery.Message.GetChat().ID),
 		MessageID:   update.CallbackQuery.Message.GetMessageID(),
-		Text:        i18n("recepthelp"),
+		Text:        i18n("func-help"),
 		ParseMode:   "HTML",
 		ReplyMarkup: telegoutil.InlineKeyboard(helpers.GetHelpKeyboard(i18n)...),
 	})
 }
+*/
 
 func callbackHelpMessage(bot *telego.Bot, update telego.Update) {
+	fmt.Println("callbackHelpMessage")
 	i18n := localization.Get(update)
 	module := strings.ReplaceAll(update.CallbackQuery.Data, "helpMessage ", "")
 
@@ -295,7 +307,7 @@ func Load(bh *telegohandler.BotHandler, bot *telego.Bot) {
 	bh.Handle(callbackPrivacy, telegohandler.CallbackDataEqual("privacy"))
 	bh.Handle(callbackAboutYourData, telegohandler.CallbackDataEqual("aboutYourData"))
 	bh.Handle(callbackHelpMenu, telegohandler.CallbackDataEqual("helpMenu"))
-	bh.Handle(callbackRecept, telegohandler.CallbackDataEqual("recept"))
+	//bh.Handle(callbackFunc, telegohandler.CallbackDataEqual("func"))
 	bh.Handle(callbackAboutMenu, telegohandler.CallbackDataEqual("about"))
 	bh.Handle(callbackHelpMessage, telegohandler.CallbackDataPrefix("helpMessage"))
 }

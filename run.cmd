@@ -17,6 +17,7 @@ IF NOT EXIST "%WORKDIR%\run\database" (
 echo Copy .env
 copy %WORKDIR%\.env %WORKDIR%\run\.env 
 copy %WORKDIR%\internal\localization\locales %WORKDIR%\run\locales
+copy %WORKDIR%\recept.json %WORKDIR%\run\recept.json
 
 echo Build the Go application
 go build -x -o %WORKDIR%\run\botrecept.exe main.go setup.go

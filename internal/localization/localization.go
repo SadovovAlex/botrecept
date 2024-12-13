@@ -76,10 +76,6 @@ func processLanguageFile(path string, wg *sync.WaitGroup) {
 }
 
 func GetChatLanguage(chat telego.Chat) (string, error) {
-	return "en-us", nil
-}
-
-func GetChatLanguage2(chat telego.Chat) (string, error) {
 	var tableName, idColumn string
 	if strings.Contains(chat.Type, "group") {
 		tableName = "groups"

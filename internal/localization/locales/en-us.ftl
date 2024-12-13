@@ -8,24 +8,29 @@ language-changed = The language has been changed successfully.
 measurement-unit = m
 start-button = Start a chat.
 start-message =
-    Привет <b>{ $userFirstName }</b> — Я <b>{ $botName }</b>, помогу с рецептами и приготовлением блюд.
-
-    <b>Магазин специй:</b> <a href='zzzzz'>Специи</a>
+    Привет <b>{ $userFirstName }</b> — Я <b>{ $botName }</b>, и я здесь, чтобы помочь вам с рецептами и приготовлением блюд.
+    Что я могу сделать для вас:
+    <b>Поиск рецептов:</b> Найдите идеальные рецепты для любого случая — от простых закусок до сложных блюд.
+    <b>Советы по приготовлению:</b> Получите полезные советы и рекомендации по техникам приготовления и выбору ингредиентов.
+    <b>Магазин специй:</b> Ознакомьтесь с нашим ассортиментом специй, чтобы добавить уникальные ароматы и вкусы в ваши блюда. 
+    Вы можете легко заказать необходимые специи прямо у нас! <a href='zzzzz'>Магазин</a>
 start-message-group =
     Hello, I'm <b>{ $botName }</b>
     I have a lot of cool features. To find out more, click on the button below and start a conversation with me.
 language-button = Язык
-help-button = ❔Помощь
+help-button = ❔Мои функции
 about-button =  ℹ️ О нас
 recept-button =  🍽 Рецепт
 donation-button = 💵 Поддержка
 news-channel-button = 📢 Канал
-about-your-data-button = About your data
+about-your-data-button = О персональных даннных
 back-button = ↩️ Назад
 denied-button-alert = This button is not for you.
 privacy-policy-button = 🔒 Соглашение
 privacy-policy-group = To acess privacy policy, <b>click on the button below.</b>
-recepthelp = 
+
+recept = Рецепты
+recept-help = 
     <b>Запрос рецептов</b>
     Можно попросить бота сгенерировать рецепт, случайный или на основе ингредиентов, для этого необходимо дать команду боту
     <b>/recept картошка, грибы</b>
@@ -68,12 +73,11 @@ about-your-data =
 
     <b>Note:</b> Your Telegram user information is public information from the platform. We do not know your "real" data.
 help =
-    Here are all my modules.
-    <b>To learn more about the modules, simply click on their names.</b>
+    Это мои функциональные модули
+    <b>Нажмите на кнопку для ознакомления с каждым.</b>
 
-    <b>Note:</b>
-    Some modules have additional settings in groups.
-    To learn more, send <code>/config</code> in a group where you're an administrator.
+    <b>Примечание:</b>
+    Некоторые модули поддерживают конфигурацию для администраторов групп.
 relative-duration-seconds = { $count ->
     [one] { $count } second
     *[other] { $count } seconds

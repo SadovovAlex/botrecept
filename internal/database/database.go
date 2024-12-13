@@ -3,6 +3,7 @@ package database
 import (
 	"database/sql"
 	"fmt"
+	"log"
 	"slices"
 
 	_ "github.com/mattn/go-sqlite3"
@@ -92,11 +93,11 @@ func SaveUsers(bot *telego.Bot, update telego.Update, next telegohandler.Handler
 
 	if message.From.ID != message.Chat.ID {
 		query := "INSERT OR IGNORE INTO groups (id) VALUES (?);"
-		//_, err := DB.Exec(query, message.Chat.ID)
-		fmt.Printf("groups %v, %v", query, message.Chat.ID)
-		//if err != nil {
-		//	log.Print("[database/SaveUsers] Error inserting group: ", err)
-		//}
+		_, err := DB.Exec(query, message.Chat.ID)
+
+		if err != nil {
+			log.Print("[database/SaveUsers] Error inserting group: ", err)
+		}
 	}
 
 	query := `
@@ -114,11 +115,10 @@ func SaveUsers(bot *telego.Bot, update telego.Update, next telegohandler.Handler
 	if !slices.Contains(AvailableLocales, lang) {
 		lang = "en-us"
 	}
-	//_, err := DB.Exec(query, message.From.ID, lang, username)
-	fmt.Printf("users %v, %v, %v, %v", query, message.From.ID, lang, username)
-	//if err != nil {
-	//	log.Print("[database/SaveUsers] Error upserting user: ", err)
-	//}
+	_, err := DB.Exec(query, message.From.ID, lang, username)
+	if err != nil {
+		log.Print("[database/SaveUsers] Error upserting user: ", err)
+	}
 
 	next(bot, update)
 }
