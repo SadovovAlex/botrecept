@@ -1,4 +1,4 @@
-package qr_test
+package qr
 
 import (
 	"fmt"
