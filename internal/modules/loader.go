@@ -7,10 +7,9 @@ import (
 	"sync"
 
 	"github.com/SadovovAlex/botrecept/internal/database"
-	"github.com/SadovovAlex/botrecept/internal/modules/menu"
-	"github.com/SadovovAlex/botrecept/internal/modules/misc"
+	//"github.com/SadovovAlex/botrecept/internal/modules/menu"
 	"github.com/SadovovAlex/botrecept/internal/modules/qr"
-	"github.com/SadovovAlex/botrecept/internal/modules/recept"
+	//"github.com/SadovovAlex/botrecept/internal/modules/recept"
 	"github.com/SadovovAlex/botrecept/internal/utils/helpers"
 
 	"github.com/mymmrac/telego"
@@ -20,10 +19,10 @@ import (
 var (
 	packageLoadersMutex sync.Mutex
 	packageLoaders      = map[string]func(*telegohandler.BotHandler, *telego.Bot){
-		"menu":   menu.Load,
-		"recept": recept.Load,
-		"misc":   misc.Load,
-		"qr":     qr.Load,
+		//"menu":   menu.Load,
+		//"recept": recept.Load,
+		//"misc":   misc.Load,
+		"qr": qr.Load,
 		//"config": config.Load,
 		//"medias":   medias.Load,
 
