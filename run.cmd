@@ -1,5 +1,5 @@
 SET CGO_ENABLED=1
-SET WORKDIR=c:\PROGRAMMING\bot\botrecept
+SET WORKDIR=d:\PROGRAMMING\GO\botrecept
 
 echo Change to the directory where the Go code is located
 cd %WORKDIR%\cmd\bot
