@@ -15,8 +15,8 @@ start-message =
     <b>Магазин специй:</b> Ознакомьтесь с нашим ассортиментом специй, чтобы добавить уникальные ароматы и вкусы в ваши блюда. 
     Вы можете легко заказать необходимые специи прямо у нас! <a href='zzzzz'>Магазин</a>
 start-message-group =
-    Hello, I'm <b>{ $botName }</b>
-    I have a lot of cool features. To find out more, click on the button below and start a conversation with me.
+    Привет, Я <b>{ $botName }</b>
+    У меня есть много функций для использования напиши мне в личный чат.
 language-button = Язык
 help-button = ❔Мои функции
 about-button =  ℹ️ О нас
