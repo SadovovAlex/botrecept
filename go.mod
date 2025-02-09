@@ -1,6 +1,6 @@
 module github.com/SadovovAlex/botrecept
 
-go 1.22.3
+go 1.22
 
 require (
 	github.com/anthonynsimon/bild v0.14.0
